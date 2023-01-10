@@ -8,9 +8,10 @@ from odoo.tests.common import TransactionCase
 
 
 class TestUserRole(TransactionCase):
+
     @classmethod
     def setUpClass(cls):
-        super().setUpClass()
+        super(TestUserRole, cls).setUpClass()
         cls.env = cls.env(
             context=dict(cls.env.context, tracking_disable=True, no_reset_password=True)
         )
