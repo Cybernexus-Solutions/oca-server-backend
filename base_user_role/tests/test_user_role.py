@@ -7,6 +7,7 @@ from odoo.exceptions import AccessError
 from odoo.tests.common import TransactionCase
 
 
+@tagged('post_install', '-at_install')
 class TestUserRole(TransactionCase):
 
     @classmethod
