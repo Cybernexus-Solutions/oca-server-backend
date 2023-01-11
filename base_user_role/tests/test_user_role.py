@@ -3,6 +3,7 @@
 import datetime
 
 from odoo import fields
+from odoo.tests import tagged
 from odoo.exceptions import AccessError
 from odoo.tests.common import TransactionCase
 
