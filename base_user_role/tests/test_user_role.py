@@ -11,10 +11,8 @@ class TestUserRole(TransactionCase):
 
     @classmethod
     def setUpClass(cls):
-        super(TestUserRole, cls).setUpClass()
-        cls.env = cls.env(
-            context=dict(cls.env.context, tracking_disable=True, no_reset_password=True)
-        )
+        super().setUpClass()
+        cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True, no_reset_password=True))
         cls.user_model = cls.env["res.users"]
         cls.role_model = cls.env["res.users.role"]
 
