@@ -11,7 +11,7 @@
     "development_status": "Production/Stable",
     "maintainers": ["sebalix", "jcdrubay", "novawish"],
     "website": "https://github.com/OCA/server-backend",
-    "depends": ["base"],
+    "depends": ["mail"],
     "data": [
         "security/ir.model.access.csv",
         "data/ir_cron.xml",
