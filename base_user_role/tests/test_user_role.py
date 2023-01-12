@@ -8,18 +8,16 @@ from odoo.exceptions import AccessError
 from odoo.tests.common import TransactionCase
 
 
-@tagged('post_install', '-at_install')
 class TestUserRole(TransactionCase):
 
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True, no_reset_password=True))
-        cls.user_model = cls.env["res.users"]
-        cls.role_model = cls.env["res.users.role"]
+        cls.user_model = cls.env["res.users"].with_context(tracking_disable=True, no_reset_password=True)
+        cls.role_model = cls.env["res.users.role"].with_context(tracking_disable=True)
 
         cls.company1 = cls.env.ref("base.main_company")
-        cls.company2 = cls.env["res.company"].create({"name": "company2"})
+        cls.company2 = cls.env["res.company"].with_context(tracking_disable=True).create({"name": "company2"})
         cls.default_user = cls.env.ref("base.default_user")
         cls.user_id = cls.user_model.create(
             {"name": "USER TEST (ROLES)", "login": "user_test_roles"}
